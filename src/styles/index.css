@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased;
+  }
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm
+      disabled:opacity-50 disabled:cursor-not-allowed
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-dark focus:ring-brand;
+  }
+  .btn-secondary {
+    @apply btn bg-slate-200 text-slate-800 hover:bg-slate-300
+      dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+  .btn-danger {
+    @apply btn bg-red-500 text-white hover:bg-red-600 focus:ring-red-500;
+  }
+  .btn-outline {
+    @apply btn border border-slate-300 text-slate-700 hover:bg-slate-100
+      dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800;
+  }
+  .input {
+    @apply w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-slate-900
+      placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent
+      dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1;
+  }
+  .card {
+    @apply bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800;
+  }
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold;
+  }
+  .badge-verified {
+    @apply badge bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+  }
+  .badge-available {
+    @apply badge bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+  }
+  .badge-pending {
+    @apply badge bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200;
+  }
+  .badge-sold {
+    @apply badge bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800
+      bg-[length:200%_100%] animate-shimmer rounded;
+  }
+  .link {
+    @apply text-brand hover:text-brand-dark hover:underline;
+  }
+  .alert-warn {
+    @apply bg-amber-50 border border-amber-200 text-amber-900 dark:bg-amber-950 dark:border-amber-800 dark:text-amber-100
+      px-4 py-3 rounded-lg text-sm;
+  }
+  .alert-danger {
+    @apply bg-red-50 border border-red-200 text-red-900 dark:bg-red-950 dark:border-red-800 dark:text-red-100
+      px-4 py-3 rounded-lg text-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+
+/* Hide scrollbar for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* Add to your global CSS or tailwind config */
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg transition-colors;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-lg transition-colors;
+}
